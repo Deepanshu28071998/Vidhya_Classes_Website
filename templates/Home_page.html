@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidhya Classes Bijnor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Home_page.css') }}"> <!-- Link to external CSS file -->
+    <style>
+        .chatbox {
+            position: fixed;
+            bottom: 20px;
+            right: 210px;
+            z-index: 1000;
+        }
+
+        .chatbox__support {
+            display: flex;
+            flex-direction: column;
+            background: #eee;
+            width: 300px;
+            height: 400px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: all .10s ease-in-out;
+            opacity: 0;
+            transform: translateY(40px);
+            display: none; /* Initially hidden */
+        }
+
+        .chatbox--active {
+            display: flex; /* Show when active */
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chatbox__header {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .chatbox__messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .messages__item {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .messages__item--visitor {
+            background: #007bff;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .messages__item--operator {
+            background: #e0e0e0;
+            color: black;
+            align-self: flex-start;
+        }
+
+        .chatbox__footer {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        .chatbox__footer input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .chatbox__footer button {
+            padding: 10px;
+            background: #007bff; /* Change to blue for visibility */
+            border: none;
+            border-radius: 5px;
+            margin-top: 170px;
+            margin-left: 230px;
+            color: white; /* Ensure button text is visible */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="body">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="https://content.jdmagicbox.com/comp/bijnor/n1/9999p1342.1342.180708145632.q2n1/catalogue/vidhya-classes-bijnor-khatriyan-bijnor-tutorials-q12d1bzyn3.jpg" alt="Vidhya Classes Logo" class="logo">
+                </div>
+                <div class="institute-name" style="text-align: center; margin-top: 10px;">
+                    <b>VIDHYA CLASSES</b>
+                </div>
+            </div>
+        </div>
+        <marquee class="tag-line" scrollamount="20" style="font-size: 20px">"A Coaching for Everyone"</marquee>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href ="/courses"> Courses</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/youtube">YouTube</a>
+    </nav>
+
+    <!-- Hero Section (Banner) -->
+    <div class="hero">
+        <h1 class="h1S">Your Success Starts Here!</h1>
+    </div>
+    <!-- Banners -->
+    <div class="banners" style="display: flex; justify-content: space-between; padding: 20px;">
+        <!-- Column 1: Banner Section (col-8) -->
+        <div class="banner-container" style="flex: 8; margin-right: 20px;">
+            <div class="banner-frame">
+                <img id="banner" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf4UWAaTWflHuKhA8_2nKm16yB7w8NK0gnNw&s" alt="Banner" style="width: 100%; border-radius: 10px;">
+            </div>
+            <button class="prev" onclick="prevBanner()" style="background-color: #007bff; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">&#10094;</button>
+            <button class="next" onclick="nextBanner()" style="background-color: #007bff; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">&#10095;</button>
+        </div>
+
+        <!-- Column 2: Recent Updates Section (col-3) -->
+        <div class="recent-updates" style="flex: 3; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+            <h2 style="margin-top: 0; text-align: center; color: #007bff;">Recent Updates</h2>
+            <ul id="updates-list" style="list-style-type: none; padding: 0;">
+                <li style="margin-bottom: 15px;">
+                    <div style="border: 1px solid #007bff; border-radius: 10px; padding: 15px; background-color: #f0f8ff; transition: transform 0.3s, box-shadow 0.3s;">
+                        <span class="date" style="font-size: 14px; color: #555;">September 15, 2024</span>
+                        <span class="title" style="font-weight: bold; font-size: 18px; display: block; margin-top: 5px; color: #007bff;">New Course Launch: AI Basics</span>
+                        <p class="description" style="margin-top: 5px; color: #333;">Join our new course on AI Basics starting next month. <a href="" style="color: #007bff; text-decoration: underline;">Learn more</a>.</p>
+                    </div>
+                </li>
+                <li style="margin-bottom: 15px;">
+                    <div style="border: 1px solid #007bff; border-radius: 10px; padding: 15px; background-color: #f0f8ff; transition: transform 0.3s, box-shadow 0.3s;">
+                        <span class="date" style="font-size: 14px; color: #555;">September 10, 2024</span>
+                        <span class="title" style="font-weight: bold; font-size: 18px; display: block; margin-top: 5px; color: #007bff;">Webinar: Future of Education</span>
+                        <p class="description" style="margin-top: 5px; color: #333;">Join our upcoming webinar discussing the future of education in a digital world. <a href="" style="color: #007bff; text-decoration: underline;">Register here</a>.</p>
+                    </div>
+                </li>
+                <li style="margin-bottom: 15px;">
+                    <div style="border: 1px solid #007bff; border-radius: 10px; padding: 15px; background-color: #f0f8ff; transition: transform 0.3s, box-shadow 0.3s;">
+                        <span class="date" style="font-size: 14px; color: #555;">September 5, 2024</span>
+                        <span class="title" style="font-weight: bold; font-size: 18px; display: block; margin-top: 5px; color: #007bff;">Scholarship Opportunities Available</span>
+                        <p class="description" style="margin-top: 5px; color: #333;">Applications for our scholarship program are now open. <a href="" style="color: #007bff; text-decoration: underline;">Apply now</a>.</p>
+                    </div>
+                </li>
+            </ul>
+            <div id="more-updates" style="display: none;">
+                <ul style="list-style-type: none; padding: 0;">
+                    <li style="margin-bottom: 15px;">
+                        <div style="border: 1px solid #007bff; border-radius: 10px; padding: 15px; background-color: #f0f8ff; transition: transform 0.3s, box-shadow 0.3s;">
+                            <span class="date" style="font-size: 14px; color: #555;">September 20, 2024</span>
+                            <span class="title" style="font-weight: bold; font-size: 18px; display: block; margin-top: 5px; color: #007bff;">New Workshop: Data Science Essentials</span>
+                            <p class="description" style="margin-top: 5px; color: #333;">Sign up for our workshop on Data Science Essentials happening next month. <a href="" style="color: #007bff; text-decoration: underline;">Register here</a>.</p>
+                        </div>
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <div style="border: 1px solid #007bff; border-radius: 10px; padding: 15px; background-color: #f0f8ff; transition: transform 0.3s, box-shadow 0.3s;">
+                            <span class="date" style="font-size: 14px; color: #555;">September 25, 2024</span>
+                            <span class="title" style="font-weight: bold; font-size: 18px; display: block; margin-top: 5px; color: #007bff;">Conference: Innovations in Tech</span>
+                            <p class="description" style="margin-top: 5px; color: #333;">Join us for a conference on the latest innovations in technology. <a href="" style="color: #007bff; text-decoration: underline;">Find out more</a>.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a id="toggle-button" href="javascript:void(0);" onclick="toggleUpdates()" style="background-color: #007bff; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s;">View More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Frame -->
+    <div class="image-frame-container">
+        <h2 class="h2S">Our Students</h2>
+        <div class="image-frame">
+            <img id="toppers" src="https://media.gettyimages.com/id/517876430/photo/late-teen-happy-girl-students-studying-a-book-together.jpg?s=612x612&w=gi&k=20&c=Ve56aAzmqrYVAernvpahhCMqJuG2-mitv8iHwIXgAWo=" alt="Image1">
+            <img id="toppers" src="https://www.shutterstock.com/image-photo/young-male-college-student-wearing-260nw-2287978891.jpg" alt="Image2">
+            <img id="toppers" src="https://media.gettyimages.com/id/1049281412/photo/cute-schoolgirl-smiling-balancing-stack-of-books-on-the-head-at-library.jpg?s=612x612&w=gi&k=20&c=VKZHo8rHkRKMmvhwYBR3XALnalCuqcI4l1KHUdLkTs4=" alt="Image3">
+            <img id="toppers" src="https://watermark.lovepik.com/photo/20211123/large/lovepik-a-college-student-carrying-a-book-with-a-book-bag-picture_500837979.jpg" alt="Image4">
+ <img id="toppers" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQfZZ_FCqzjw4r1kXpX0k5RnhxIyvFHfAyPA&s" alt="Image5">
+            <img id="toppers" src="https://png.pngtree.com/thumb_back/fh260/background/20231220/pngtree-primary-school-students-learn-to-read-books-photo-image_15528457.png" alt="Image6">
+            <img id="toppers" src="https://www.visualsstock.com/details_watermark.php?filename=50382" alt="Image7">
+            <img id="toppers" src="https://previews.123rf.com/images/ljupco/ljupco1102/ljupco110200009/8832643-four-happy-students-posing-with-books-isolated-on-white-background.jpg" alt="Image8">
+            <img id="toppers" src="https://st3.depositphotos.com/4431055/15764/i/1600/depositphotos_157644358-stock-photo-group-of-students-with-books.jpg" alt="Image9">
+            <img id="toppers" src="https://st2.depositphotos.com/4431055/7304/i/950/depositphotos_73046979-stock-photo-student-high-school-student-college.jpg" alt="Image10">
+            <img id="toppers" src="https://st3.depositphotos.com/29384342/33853/i/1600/depositphotos_338536736-stock-photo-education-concept-group-students-reading.jpg" alt="Image11">
+            <img id="toppers" src="https://www.shutterstock.com/image-photo/education-concept-positive-smiling-indian-260nw-2387459723.jpg" alt="Image12">
+        </div>
+
+        <button class="prev" onclick="prevImage()">&#10094;</button>
+        <button class="next" onclick="nextImage()">&#10095;</button>
+    </div>
+    
+    <!-- Services Section -->
+    <section id="services" style="padding: 40px; background-color: #f9f9f9;">
+        <h2 style="text-align: center; margin-bottom: 30px; font-size: 28px; color: #007bff;">Our Services</h2>
+        <div class="services" style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+            <div class="service-box" style="flex: 1; min-width: 250px; max-width: 300px; margin: 15px; padding: 20px; border-radius: 10px; background-color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+                <h3 style="color: #007bff;">Experienced Faculty</h3>
+                <p>Learn from the best teachers in the field with years of experience.</p>
+            </div>
+            <div class="service-box" style="flex: 1; min-width: 250px; max-width: 300px; margin: 15px; padding: 20px; border-radius: 10px; background-color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+                <h3 style="color: #007bff;">Interactive Learning</h3>
+                <p>Get access to interactive online and offline learning materials.</p>
+            </div>
+            <div class="service-box" style="flex: 1; min-width: 250px; max-width: 300px; margin: 15px; padding: 20px; border-radius: 10px; background-color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+                <h3 style="color: #007bff;">Flexible Schedules</h3>
+                <p>We offer courses with flexible timings to suit your needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #007bff; color: white; font-family: Arial, sans-serif;">
+        <div class="text-footer" style="flex: 10 ; max-width: 83.33%; /* 10 out of 12 parts */">
+            <h2 style="margin-bottom: 10px;">Contact Us</h2>
+            <p style="margin: 5px 0;"><b>Location:</b> Near Jain Mandir, Moh. Bharmnan</p>
+            <p style="margin: 5px 0;"><b>City:</b> Bijnor</p>
+            <p style="margin: 5px 0;"><b>District:</b> Bijnor</p>
+            <p style="margin: 5px 0;"><b>Pin Code:</b> 246701</p>
+            <p style="margin: 5px 0;"><b>State:</b> Uttar Pradesh</p>
+            <p style="margin: 5px 0;"><b>Country:</b> India</p>
+            <p style="margin: 5px 0;">&copy; 2024 Vidhya Classes. All rights reserved.</p>
+        </div>
+    </footer>
+    <div class="chatbox">
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <h4>Chat with Us</h4>
+            </div>
+            <div class="chatbox__messages" id="chatbox-messages">
+                <!-- Messages will be dynamically added here -->
+            </div>
+            <div class="chatbox__footer">
+                <input type="text" id="chat-input" placeholder="Type your message...">
+                <button id="send-button">Send</button> <!-- Added text to the button -->
+            </div>
+        </div>
+        <button id="chatbox-toggle"><img src="static/images/chatbot.png" alt="Chatbot Icon"></button>
+    </div>
+
+    <script>
+        const chatboxToggle = document.getElementById('chatbox-toggle');
+        const chatboxSupport = document.querySelector('.chatbox__support');
+
+        // Initialize chatbox as closed
+        let isChatboxOpen = false;
+
+        chatboxToggle.addEventListener('click', () => {
+            isChatboxOpen = !isChatboxOpen; // Toggle the state
+            chatboxSupport.classList.toggle('chatbox--active', isChatboxOpen); // Add or remove active class
+
+            // Change the button image or text based on the state
+            if (isChatboxOpen) {
+                chatboxToggle.innerHTML = '<img src="static/images/close.png" alt="Close Icon" style="height:25px; width: 25px;">'; // Change to close icon
+            } else {
+                chatboxToggle.innerHTML = '<img src="static/images/chatbot.png" alt="Chatbot Icon">'; // Change to chat icon
+            }
+        });
+
+        const sendButton = document.getElementById('send-button');
+        const chatInput = document.getElementById('chat-input');
+        const chatboxMessages = document.getElementById('chatbox-messages');
+
+        sendButton.addEventListener('click', async () => {
+            const userMessage = chatInput.value.trim();
+            if (userMessage) {
+                // Display user's message
+                chatboxMessages.innerHTML += `<div class="messages__item messages__item--visitor">${userMessage}</div>`;
+                chatInput.value = '';
+
+                // Send message to Flask backend
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: userMessage })
+                });
+
+                const data = await response.json();
+                const botReply = data.reply;
+
+                // Display bot's reply
+                chatboxMessages.innerHTML += `<div class="messages__item messages__item--operator">${botReply}</div>`;
+                chatboxMessages.scrollTop = chatboxMessages.scrollHeight; // Scroll to the bottom
+            }
+        });
+
+        // Optional: Send message on Enter key press
+        chatInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                sendButton.click();
+            }
+        });
+    </script>
+
+    <script src="{{ url_for('static', filename='js/Home_page.js') }}"></script>
+    <script>
+        function toggleUpdates() {
+            const moreUpdates = document.getElementById('more-updates');
+            const toggleButton = document.getElementById('toggle-button');
+            
+            if (moreUpdates.style.display === "none") {
+                moreUpdates.style.display = "block";
+                toggleButton.textContent = "View Less";
+            } else {
+                moreUpdates.style.display = "none";
+                toggleButton.textContent = "View More";
+            }
+        }
+    </script>
+</body>
+</html>

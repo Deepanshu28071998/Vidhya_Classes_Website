@@ -1,0 +1,271 @@
+body {
+    
+    background-color: #faf6d9;
+}
+.body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header section */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e4e2e1;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 2px -2px rgb(0, 0, 0);
+}
+
+.logo {
+    width: 100px;
+    height: 80px;
+    border-radius: 50%; /* Optional, to make the logo round */
+}
+
+/* Name of institute */
+.institute-name {
+    font-size: 5cap;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.banner-container {
+    position: relative;
+    width: 100%;
+    max-width: 0 auto-space;
+    text-align: center;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.banner-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+.banner-frame img {
+    width: 100%;
+    height: 100%;
+    
+}
+
+button {
+    position: absolute;
+    top: 8%;
+    left: 85%;
+    background-color: rgba(253, 6, 6, 0.719);
+    color: white;
+    border: none;
+    border-radius: 10%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.tag-line{
+    background-color: #282c34;
+    color: #d2e356;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.nav{
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.nav a:hover{
+    background-color: #61dafb;
+    color: #333;
+}
+.nav a:active{
+    background-color: #ddd;
+    color: #333;
+}
+.h1S{
+    text-align: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 2px -2px gray;
+}
+.h2S{
+    text-align: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 2px -2px gray;
+}
+
+/* Banner Container */
+.banner-container {
+    width: 100%;
+    height: 75%; /* Adjust this height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background-color: #222222; /* Dark background for better contrast */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: 10px; /* Top margin for spacing */
+}
+
+/* Banner Image */
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    border-radius: 10px; /* Match the border radius of the container */
+    transition: transform 0.5s ease-in-out; /* Smooth zoom effect on hover */
+}
+
+
+.banner-image:hover {
+    transform: scale(1.05);
+}
+
+/* Custom Arrow Controls */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 2rem;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.carousel-control-prev {
+    left: 5px; /* Push arrow to the far left */
+}
+
+.carousel-control-next {
+    right: 5px; /* Push arrow to the far right */
+}
+
+/* Hover Effects for Arrows */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(51, 50, 50, 0.8);
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .banner-container {
+        height: 300px;
+    }
+    
+    .carousel-control-prev, .carousel-control-next {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+
+    .carousel-control-prev {
+        left: 5px;
+    }
+
+    .carousel-control-next {
+        right: 5px;
+    }
+}
+
+
+.image-frame-container{
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    background-color: #101820;
+}
+.image-frame{
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    padding: 25px;
+}
+.image-frame img{
+    width: 25%;
+    padding: 5px;
+}
+button:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+footer{
+    background-color: rgba(32, 30, 30, 0.721);
+    color: white;
+    padding: 2px 2px;
+    font-family: Arial, sans-serif;
+    align-items: center;
+    display: flex;
+}
+.text-footer{
+    margin: 20px;
+}
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+.position-relative{
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    display: inline-block;
+    /* unicode-bidi: isolate; */
+}
+.rounded-start{
+    border-bottom-left-radius: .25rem !important;
+    border-top-left-radius: .25rem !important;
+}
+.footer:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transition: background-color 0.3s ease;
+}
+
+.loading-indicator {
+    color: gray;
+    font-style: italic;
+    text-align: center;
+}
+
+.service-box:hover {
+    transform: translateY(-5px); /* Move up slightly on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+     /* Increase shadow on hover */
+}
+

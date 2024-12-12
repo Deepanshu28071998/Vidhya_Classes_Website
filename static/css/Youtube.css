@@ -1,0 +1,197 @@
+body {
+    
+    background-color: #faf6d9;
+}
+.body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header section */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e4e2e1;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 2px -2px rgb(0, 0, 0);
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Optional, to make the logo round */
+}
+
+/* Name of institute */
+.institute-name {
+    font-size: 5cap;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.tag-line{
+    background-color: #282c34;
+    color: #d2e356;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.nav{
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.nav a:hover{
+    background-color: #61dafb;
+    color: #333;
+}
+.nav a:active{
+    background-color: #ddd;
+    color: #333;
+}
+
+
+.content {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.content h2 {
+    text-align: center;
+    color: #333;
+}
+.content p {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+.youtube-link {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+.youtube-link a {
+    padding: 15px 25px;
+    background-color: #FF0000;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.youtube-link a:hover {
+    background-color: #cc0000;
+}
+.iframe-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+iframe {
+    width: 80%;
+    height: 450px;
+    border: none;
+}
+.content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.content h2 {
+    text-align: center;
+    color: #333;
+}
+.content p {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+.youtube-link {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+.youtube-link a {
+    padding: 15px 25px;
+    background-color: #FF0000;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.youtube-link a:hover {
+    background-color: #cc0000;
+}
+.playlists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+.playlist {
+    flex: 1 1 calc(30% - 40px);
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.playlist h3 {
+    color: #333;
+}
+.playlist a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #FF0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.playlist a:hover {
+    background-color: #cc0000;
+}
+
+@media (max-width: 768px) {
+    .playlist {
+        flex: 1 1 100%;
+    }
+}
+
+
+footer{
+    background-color: rgba(32, 30, 30, 0.721);
+    color: white;
+    padding: 2px 2px;
+    font-family: Arial, sans-serif;
+    align-items: center;
+    display: flex;
+}
+.text-footer{
+    margin: 20px;
+}
+

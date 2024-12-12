@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Gallery.css') }}">
+</head>
+<body>
+    <header>
+        <div class="body">
+            <div class="header">
+            <div class="logo-container">
+                <img src="https://content.jdmagicbox.com/comp/bijnor/n1/9999p1342.1342.180708145632.q2n1/catalogue/vidhya-classes-bijnor-khatriyan-bijnor-tutorials-q12d1bzyn3.jpg" alt="Vidhya Classes Logo" class="logo">
+            </div>
+    
+            <!-- Right side institute name -->
+            <div class="institute-name">
+                VIDHYA CLASSES
+            </div>
+        </div>
+        </div>
+         <!-- <iframe src="AI_Logo_Name.html" width="100%" height="100px" style="border: solid" scrolling="no">
+    
+         </iframe> -->
+         
+            <marquee class="tag-line" scrollamount="20" style="font-size: 20px">
+                "A Coachng for Everyone"
+            </marquee>
+    
+        </header>
+    
+        <!-- Navigation Bar -->
+        <nav class="nav">
+            <!-- <a href="Home_page.html">Home</a>
+            <a href="About_us.html">About Us</a>
+            <a href="Courses.html">Courses</a>
+            <a href="Gallery.html">Gallery</a>
+            <a href="Contact_Us.html">Contact Us</a>
+            <a href="Youtube.html">YouTube</a> -->
+
+            <!-- <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('contact') }}">Contact Us</a>
+            <a href="{{ url_for('courses') }}">Courses</a>
+            <a href="{{ url_for('gallery') }}">Gallery</a>
+            <a href="{{ url_for('youtube') }}">youtube</a> -->
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/courses">Courses</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/youtube">YouTube</a>
+
+        </nav>
+
+        <h1>Gallery of Vidhya Classes</h1>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            
+            <img src="{{ url_for('static', filename='images/38612278_750633145268008_3500333487938863104_n.jpg') }}" alt="Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/38817167_750635018601154_5387588134080872448_n.jpg') }}" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/46243605_815409368790385_3527470401280016384_n.jpg') }}" alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/49425973_852163515114970_5247912627929088000_n.jpg') }}" alt="Image 4">
+        </div>
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/61657405_942718116059509_4519056845301612544_n.jpg') }}" alt="Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/68624216_995397970791523_9075414669820166144_n.jpg') }}" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/68683331_995397997458187_6321418095583821824_n.jpg') }}" alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/68752569_995398017458185_9083880299468685312_n.jpg') }}" alt="Image 4">
+        </div>
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/82016126_1123242898007029_1576390561139523584_n.jpg') }}" alt="Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/274671183_1711265082538138_7033598172053340447_n.jpg') }}" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/274751576_1711265259204787_5832455476033830569_n.jpg') }}" alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/274754672_1711265145871465_3139646128533676599_n.jpg') }}" alt="Image 4">
+        </div>
+    </div>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/274786361_1711265005871479_5363079346728029212_n.jpg') }}" alt="Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/340853791_954080479108840_5217259813315054250_n.jpg') }}" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/274986249_1711265449204768_5351335589257873730_n.jpg') }}" alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/274988271_1711265525871427_233549000381071458_n.jpg') }}" alt="Image 4">
+        </div>
+    </div>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/275005549_1711265595871420_7450492793562221409_n.jpg') }}" alt="Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/275072734_1711264935871486_5061770646724678664_n.jpg') }}" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/309392251_536711861790743_4097862654111705124_n.jpg') }}" alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="{{ url_for('static', filename='images/340844248_876487633446671_8797053771700676918_n.jpg') }}" alt="Image 4">
+        </div>
+    </div>
+
+
+        <footer class="footer">
+            <div class="text-footer">
+                <p fonts-size="20px"><b>Location :-</b> Near Jain Mandir, Moh. Bharmnan</p>
+                <p fonts-size="20px"><b>City :-</b> Bijnor</p>
+                <p fonts-size="20px"><b>District :-</b> Bijnor</p>
+                <p fonts-size="20px"><b>Pin Code :-</b> 246701</p>
+                <p fonts-size="20px"><b>State :-</b> Uttar Pradesh</p>
+                <p fonts-size="20px"><b>Country :-</b> India</p>
+    
+                <p>&copy; 2024 Vidhya Classes. All rights reserved.</p>
+            </div>
+        </footer>
+</body>
+</html>
