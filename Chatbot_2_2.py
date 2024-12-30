@@ -92,7 +92,7 @@ pairs = [
         ["The address of vidhya classes is 'Near Jain Temple, Moh. Brhamanan, Bijnor, Dist. Bijnor, U.P., India'."]
     ],
     [
-        r"What is Vidhya Classes",
+        r"What is Vidhya Classes|about vidhya classes| about this coaching|about this institute",
         ["Vidhya Classes is a coaching institute that provides quality education to students."]
     ],
     [
